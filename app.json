@@ -1,10 +1,10 @@
 {
-  "name": "whatsapp-bot (kinflux bot v2)",
-  "description": " Whatsapp bot.",
+  "name": "whatsapp-bot (Zeke bot )",
+  "description": " best Whatsapp bot.",
   "keywords": [
     "whatsapp bot"
   ],
-  "repository": "https://github.com/diggilly/kinflux_bot_god_v2",
+  "repository": "https://github.com/ZekeWanjuu/kinflux_bot_god_v2",
   "stack": "container",
   "env": {
     "OPENAI_API_KEY": {
