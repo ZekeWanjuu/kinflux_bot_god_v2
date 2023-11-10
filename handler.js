@@ -282,25 +282,25 @@ export async function handler(chatUpdate) {
                 if (!('detect' in chat))
                     chat.detect = false
                 if (!('sWelcome' in chat))
-                    chat.sWelcome = 'hello am kinflux bot.A whatsapp bot created by kinflux digital'
+                    chat.sWelcome = false
                 if (!('sBye' in chat))
-                    chat.sBye = ''
+                    chat.sBye = false
                 if (!('sPromote' in chat))
-                    chat.sPromote = ''
+                    chat.sPromote = false
                 if (!('sDemote' in chat))
-                    chat.sDemote = ''
+                    chat.sDemote = false
                 if (!('delete' in chat))
-                    chat.delete = true
+                    chat.delete = false
                 if (!('antiLink' in chat))
                     chat.antiLink = false
                 if (!('viewonce' in chat))
-                    chat.viewonce = true
+                    chat.viewonce = false
                 if (!('antiToxic' in chat))
                     chat.antiToxic = false
                 if (!('simi' in chat))
                     chat.simi = true
                 if (!('autosticker' in chat))
-                    chat.autosticker = true
+                    chat.autosticker = false
                 if (!('premium' in chat))
                     chat.premium = false
                  if (!('onlyenglish' in chat))
@@ -314,13 +314,13 @@ export async function handler(chatUpdate) {
             } else
                 global.db.data.chats[m.chat] = {
                     isBanned: false,
-                    welcome: true,
+                    welcome: false,
                     detect: false,
-                    sWelcome: '',
-                    sBye: '',
-                    sPromote: '',
-                    sDemote: '',
-                    delete: true,
+                    sWelcome: false,
+                    sBye: false,
+                    sPromote: false,
+                    sDemote: false,
+                    delete: false,
                     antiLink: false,
                     viewonce: false,
                     antiToxic: true,
@@ -802,7 +802,7 @@ export async function participantsUpdate({ id, participants, action }) {
                     .replace('@user', '@' + user.split('@')[0]);
           
                   let nthMember = groupMetadata.participants.length;
-                  let secondText = `Goodbye, our ${nthMember}th group member.we will always miss you from kinflux bot`;
+                  let secondText = `Goodbye, our ${nthMember}th group member.we will always miss you from Zeke Bot`;
           
                   let leaveApiUrl = `https://wecomeapi.onrender.com/leave-image?username=${encodeURIComponent(
                     await this.getName(user)
@@ -828,11 +828,11 @@ export async function participantsUpdate({ id, participants, action }) {
  break
         case 'promote':
         case 'promover':
-            text = (chat.sPromote || this.spromote || conn.spromote || '@user is now administrador')
+            text = (chat.sPromote || this.spromote || conn.spromote || '@user succesfully promoted')
         case 'demote':
         case 'degradar':
             if (!text)
-                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user not now an administrador')
+                text = (chat.sDemote || this.sdemote || conn.sdemote || '@user succesfully demoted')
             text = text.replace('@user', '@' + participants[0].split('@')[0])
             if (chat.detect)
                 this.sendMessage(id, { text, mentions: this.parseMention(text) })
@@ -890,15 +890,15 @@ TO DEACTIVE , PRESS
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: '*ᴏɴʟʏ *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 ᴅᴇᴠᴇʟᴏᴘᴇʀ* • This command can only be used by the *Creator of the bot*',
-        owner: '*ᴏɴʟʏ *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 ᴏᴡɴᴇʀ* • This command can only be used by the *Bot Owner',
-        mods: '*ᴏɴʟʏ *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 ᴍᴏᴅᴇʀᴀᴛᴏʀ* •This function is only for **≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 Bot moderators*',
-        premium: '*ᴏɴʟʏ *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 ᴘʀᴇᴍɪᴜᴍ* • This command is for **≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 Premium members only',
-        group: '*≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 *ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • This command can only be used in *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 active groups',
-        private: '* 🎌KINFLUX 𝘽𝙊𝙏 🎌 ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • This command can only be used in the *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 private chat of the Bot*',
-        admin: '*ᴏɴʟʏ ≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 ᴀᴅᴍɪɴ* • This command is only for *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌Group Admins*',
-        botAdmin: '*ᴏɴʟʏ ʙᴏᴛ ᴀᴅᴍɪɴ* • To use this command *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 must be *Admin!*',
-        unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ ʏᴇᴛ* •  Sign in to use this feature Typing:\n\n*/reg name.age*\n\n📌Example : */reg kinflux.20*', 
+        rowner: '*ᴏɴʟʏ *Zeke Wanjuu* • This command can only be used by the *Creator of the bot*',
+        owner: '*ᴏɴʟʏ *My Owner* • This command can only be used by the *Bot Owner',
+        mods: '*ᴏɴʟʏ *≡ 🎌Zeke 𝘽𝙊𝙏 🎌 ᴍᴏᴅᴇʀᴀᴛᴏʀ* •This function is only for **≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 Bot moderators*',
+        premium: '*ᴏɴʟʏ *≡ 🎌Zeke W 𝘽𝙊𝙏 🎌 ᴘʀᴇᴍɪᴜᴍ* • This command is for **≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 Premium members only',
+        group: '*≡ 🎌Zeke Wa 𝘽𝙊𝙏 🎌 *ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • This command can only be used in *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 active groups',
+        private: '* 🎌Zeke Wan 𝘽𝙊𝙏 🎌 ᴘʀɪᴠᴀᴛᴇ ᴄʜᴀᴛ* • This command can only be used in the *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌 private chat of the Bot*',
+        admin: '*ᴏɴʟʏ ≡ 🎌Zeke  𝘽𝙊𝙏 🎌 ᴀᴅᴍɪɴ* • This command is only for *≡ 🎌KINFLUX 𝘽𝙊𝙏 🎌Group Admins*',
+        botAdmin: '*ᴏɴʟʏ ʙᴏᴛ ᴀᴅᴍɪɴ* • To use this command *≡ 🎌Zeke 𝘽𝙊𝙏 🎌 must be *Admin!*',
+        unreg: '*ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ʀᴇɢɪsᴛᴇʀᴇᴅ ʏᴇᴛ* •  Sign in to use this feature Typing:\n\n*/reg name.age*\n\n📌Example : */reg Zeke*', 
         restrict: '*ʀᴇsᴛʀɪᴄᴛ* • This feature is *disabled*',
     }[type]
     if (msg) return m.reply(msg)
